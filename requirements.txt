@@ -1,8 +1,9 @@
 # Tested against Python 3.11 (the Google Colab runtime this notebook was
 # originally run on, per the paths in the saved outputs).
 #
-# num2words==0.5.14 and docopt==0.6.2 are pinned exact because they are
-# confirmed versions from the notebook's own saved `pip install` output.
+# num2words==0.5.14 is pinned exact because it's the confirmed version from
+# the notebook's own saved `pip install` output (docopt is one of its own
+# transitive dependencies, not listed here directly).
 # Everything else is a minimum-version floor rather than a verified pin —
 # the actual Colab versions were never confirmed.
 #
@@ -17,4 +18,3 @@ nltk>=3.8
 wordcloud>=1.9
 matplotlib>=3.7
 num2words==0.5.14
-docopt==0.6.2
