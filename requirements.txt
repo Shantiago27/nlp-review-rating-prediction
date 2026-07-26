@@ -1,17 +1,20 @@
 # Tested against Python 3.11 (the Google Colab runtime this notebook was
 # originally run on, per the paths in the saved outputs).
 #
-# num2words==0.5.14 and docopt==0.6.2 are confirmed exact versions from the
-# notebook's own saved `pip install` output. Every other pin below is a
-# best-effort match for what Colab shipped around February 2025 (release
-# date of the last commit that produced the saved outputs) — not verified
-# against the actual run. Pin more loosely if you hit conflicts.
-pandas==2.2.2
-numpy==2.0.2
-scikit-learn==1.6.1
-nltk==3.9.1
-gensim==4.3.3
-wordcloud==1.9.3
-matplotlib==3.10.0
+# num2words==0.5.14 and docopt==0.6.2 are pinned exact because they are
+# confirmed versions from the notebook's own saved `pip install` output.
+# Everything else is a minimum-version floor rather than a verified pin —
+# the actual Colab versions were never confirmed.
+#
+# gensim was removed (it was only used for an accessory word-embeddings
+# visualization, not part of the actual TF-IDF + LogisticRegression /
+# RandomForest pipeline), so there's no numpy<2 constraint here either —
+# that cap only existed for gensim's sake.
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.3
+nltk>=3.8
+wordcloud>=1.9
+matplotlib>=3.7
 num2words==0.5.14
 docopt==0.6.2
